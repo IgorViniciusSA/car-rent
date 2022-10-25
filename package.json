@@ -1,0 +1,24 @@
+{
+  "name": "car-rent",
+  "version": "1.0.0",
+  "description": "Car rental project for web development course 2022",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IgorViniciusSA/car-rent.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IgorViniciusSA/car-rent/issues"
+  },
+  "homepage": "https://github.com/IgorViniciusSA/car-rent#readme",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "mongodb": "^4.11.0"
+  }
+}
