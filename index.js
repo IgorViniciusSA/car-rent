@@ -1,7 +1,9 @@
-const express = require('express', 'views')
+const express = require('express')
 const app = express()
 const port = 8080
 
+app.use(express.static('public'))
+app.use('/css', express.static(__dirname + 'public/css'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.set('view engine', 'ejs')
