@@ -51,4 +51,9 @@ label.logo{
     border: none;
 }
 
+.carTableRow{
+    background-color: #32353B;
+    border: black solid 20px;
+}
+
 
