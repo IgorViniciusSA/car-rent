@@ -8,6 +8,7 @@
 
 body{
     background-color: #32353B;
+    font-family: 'Roboto';
 }
 
 .headerHome{
@@ -49,5 +50,3 @@ label.logo{
     font-weight: bold;
     padding: 0 100px;
 }
-
-

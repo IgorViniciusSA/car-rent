@@ -15,4 +15,7 @@ app.listen(port, () => {
 app.get('/', (req, res) => {
     res.render('home');
   });
-  
+
+app.get('/signup', (req, res) => {
+    res.render('signup');
+});

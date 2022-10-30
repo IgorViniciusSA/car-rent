@@ -1,0 +1,58 @@
+<head>
+    <title>CarsCenter</title>
+    <meta name="description" content="Projeto para o curso de web 2022">
+    <meta name="keywords" content="HTML, CSS, JavaScript, EJS, Cookies">
+    <meta name="authors" content="Jeová Caçula de Aguiar Junior, Igor Vinícius Santos Abreu">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/singup.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+</head>
+<body>
+    <header class="headerHome">
+        <label class="logo">Cars Center</label>
+    </header>
+
+    <form action="/user/new" method="POST">
+    <div id="signupModal">
+        <p id="titleSignUp">Seja Bem-vindo</p>
+        <p id="subtitleSignUp"><i>Estavamos esperando por você</i></p>
+
+        <strong>
+        <p class="textIconsSignUp">NOME COMPLETO</p>
+        <input class="inputSignUpModal" type="text" name="nome" value="">
+
+        <p class="textIconsSignUp">DATA DE NASCIMENTO DD-MM-AAAA</p>
+        <input class="inputSignUpModal" type="date" name="dataNasc" value="">
+
+        <p class="textIconsSignUp">GÊNERO</p>
+        <input class="inputSignUpModal" name="genero" value="">
+
+        <p class="textIconsSignUp">TELEFONE</p>
+        <input class="inputSignUpModal" type="number" name="telefone" value="">
+
+        <p class="textIconsSignUp">EMAIL</p>
+        <input class="inputSignUpModal" type="email" name="email" value="">
+        
+        <div class="divSenhaSignUpModal">
+
+            <div class="divSenhaMarginSignUpModal">
+                <p class="textIconsSignUpSenha">SENHA</p>
+                <input class="inputSignUpModalSenha" type="text" name="senha" value="">
+            </div>
+
+            <div class="divSenhaMarginSignUpModal">
+                <p class="textIconsSignUpSenha">CONFIRMAÇÃO</p>
+                <input class="inputSignUpModalSenha" type="text" name="confSenha" value="">
+            </div>
+        </div>      
+        </strong>
+
+        <div id="buttonsConfirmSignUpModal">
+            <button class="buttonConfirm"><a href="/" id="linkConfirm">CANCELAR</a></button>
+            <button class="buttonCancel" type="submit"><a href="" id="linkCancel">CADASTRAR</a></button>
+        </div>
+    </div>
+    </form>
+</body> 
