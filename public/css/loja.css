@@ -23,3 +23,15 @@
     width: 66px;
     border: none;
 }
+
+.rentCarrButton{
+    margin-top: 30px;
+    width: 187px;
+    height: 66px;
+    color: #fff;
+    background-color: #2DA44E;
+    font-size: 20px;
+    border:  none;
+    font-family: sans-serif;
+    border-radius: 2px;
+}
