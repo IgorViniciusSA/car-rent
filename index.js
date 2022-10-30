@@ -23,3 +23,7 @@ app.get('/signup', (req, res) => {
 app.get('/loja', (req, res) => {
     res.render('loja');
 });
+
+app.get('/loja/alugar', (req, res) => {
+  res.render('alugar');
+});
