@@ -1,0 +1,37 @@
+.myAccountButton{
+    color: #fff;
+    height: 48px;
+    width: 114px;
+    background: #E93E5F;
+    border-radius: 4px;
+    border:  none;
+}
+.myRentButton{
+    color: #fff;
+    background: #32353B;
+    border-radius: 4px;
+    height: 48px;
+    width: 125px;
+    border: none;
+}
+
+.storeButton{
+    color: #fff;
+    background: #32353B;
+    border-radius: 4px;
+    height: 48px;
+    width: 66px;
+    border: none;
+}
+
+.rentCarrButton{
+    margin-top: 30px;
+    width: 187px;
+    height: 66px;
+    color: #fff;
+    background-color: #2DA44E;
+    font-size: 20px;
+    border:  none;
+    font-family: sans-serif;
+    border-radius: 2px;
+}

@@ -20,6 +20,15 @@ app.get('/signup', (req, res) => {
     res.render('signup');
 });
 
+<<<<<<< HEAD
 app.get('/signin', (req, res) => {
   res.render('signin');
+=======
+app.get('/loja', (req, res) => {
+    res.render('loja');
+});
+
+app.get('/loja/alugar', (req, res) => {
+  res.render('alugar');
+>>>>>>> main
 });
