@@ -20,10 +20,22 @@ app.get('/signup', (req, res) => {
     res.render('signup');
 });
 
+app.get('/signin', (req, res) => {
+  res.render('signin');
+});
+
 app.get('/loja', (req, res) => {
     res.render('loja');
 });
 
 app.get('/loja/alugar', (req, res) => {
   res.render('alugar');
+});
+
+app.get('/admin', (req, res) => {
+  res.render('admin');
+});
+
+app.get('/loja/aluguel', (req, res) => {
+  res.render('lojaaluguel');
 });

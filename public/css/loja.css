@@ -35,3 +35,47 @@
     font-family: sans-serif;
     border-radius: 2px;
 }
+
+.dataAluguelCarText{
+    color: #AAAAAA;
+    font-size: 12px;
+
+    margin-left: 10%;
+    margin-top: 10px;
+    margin-bottom:  5px;
+}
+
+#dataAluguelCarModal{
+    margin-top: 1%;
+    margin-left: 20%;
+
+    width: 60%;
+    height: 19%;
+
+    background-color: #27292D;
+    border-radius: 6px;
+
+    padding: 10px;
+}
+
+.confirmReservaButton{
+    background-color: #2DA44E;
+    border: #2DA44E solid 1px;
+    border-radius: 2px;
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 70%;
+    margin-top: 1%;
+
+
+    height: 15%;
+    width: 190px;
+
+    font-size: 12px;
+}
+
+.confirmLinkConfirmReserva{
+    text-decoration: none;
+    color: #FFFFFF;
+}
