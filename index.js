@@ -35,3 +35,7 @@ app.get('/loja/alugar', (req, res) => {
 app.get('/admin', (req, res) => {
   res.render('admin');
 });
+
+app.get('/loja/aluguel', (req, res) => {
+  res.render('lojaaluguel');
+});
