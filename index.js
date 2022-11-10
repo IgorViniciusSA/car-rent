@@ -1,6 +1,6 @@
 
-const cookieSession = require('cookie-session')
 const express = require('express')
+const cookieSession = require('cookie-session')
 const app = express()
 const port = 8080
 
@@ -15,9 +15,7 @@ app.set('view engine', 'ejs')
 //  - Coockies
 app.use(cookieSession({
   name: 'cookieName',
-  keys: [
-    'cookieKey'
-  ],
+  keys: ['cookieKey'],
   httpOnly: true,
   maxAge: 60 * 1000 // 1 minute
 }))
@@ -31,16 +29,12 @@ app.use((req, res, next) => {
 });
 
 
-
-
-
-
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
   })  
 
 app.get('/', (req, res) => {
-    res.render('home', {dbcar:dbcar});
+    res.render('home');
   });
 
 app.get('/signup', (req, res) => {
