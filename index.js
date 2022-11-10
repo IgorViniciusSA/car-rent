@@ -1,6 +1,5 @@
-
 const express = require('express')
-const cookieSession = require('cookie-session')
+//const cookieSession = require('cookie-session')
 const app = express()
 const port = 8080
 
@@ -13,11 +12,10 @@ app.set('view engine', 'ejs')
 
 // Middlewares
 //  - Coockies
-app.use(cookieSession({
+/*app.use(cookieSession({
   name: 'cookieName',
   keys: ['cookieKey'],
-  httpOnly: true,
-  maxAge: 60 * 1000 // 1 minute
+  maxAge: 60 * 1000
 }))
 
 app.use((req, res, next) => {
@@ -26,41 +24,41 @@ app.use((req, res, next) => {
       res.redirect('/home')
     else next()
   } else next()
-});
+});*/
 
+const mongoRepository = require('./repository/mongo-repository')
 
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
+    console.log(`sistema rodando na porta ${port}`)
   })  
 
+
+// metodos GET
 app.get('/', (req, res) => {
-    res.render('home');
-  });
+  //let usuarios = mongoRepository.getUsers()
+  let usuarios = {
+    enderecoimg: 'https://revistacarro.com.br/wp-content/uploads/2021/04/Fiat-Toro-Ultra_1.jpg',
+	  nome: 'Toro',
+	  marca: 'Fiat',
+	  cor: 'Vermelho',
+	  preco: '160000',
+	  diaria: '500',
+	  status: '1',
+	  datadisponivel: '',
+	  datainicioaluguel: '',
+	  datafinalaluguel: '',
+	  proximasdatas:['','','']
+  }
+  console.log(usuarios)
+  //res.render('signin', {dbcar : usuarios});
+
+  res.render('home', {dbcar: usuarios})
+})
 
 app.get('/signup', (req, res) => {
     res.render('signup')
-});
-app.post('/user/signUp', (req, res) => {
-  let newCient = req.body
-  
-  newClient.nome = req.body.nome
-  newClient.dataNasc = req.body.dataNasc
-  newClient.genero = req.body.genero
-  newClient.telefone = req.body.telefone
-  newClient.email = req.body.email
+})
 
-  if(req.body.senha == confirmSenha){
-    newClient.senha = req.body.senha
-  }
-
-  console.log(newClient)
-
-  mongoRepository.saveProd(req.body).then((insertedProd) => {
-    console.log('Inserted Product')
-    console.log(insertedProd)
-    res.redirect('/prod/list')
-  })
-});
 
 app.get('/signin', (req, res) => {
   res.render('signin');
@@ -80,4 +78,29 @@ app.get('/admin', (req, res) => {
 
 app.get('/loja/aluguel', (req, res) => {
   res.render('aluguel');
+});
+
+
+// metodos POST
+
+app.post('/user/signUp', (req, res) => {
+  let newClient = req.body
+  
+  newClient.nome = req.body.nome
+  newClient.dataNasc = req.body.dataNasc
+  newClient.genero = req.body.genero
+  newClient.telefone = req.body.telefone
+  newClient.email = req.body.email
+
+  if(req.body.senha == confirmSenha){
+    newClient.senha = req.body.senha
+  }
+
+  console.log(newClient)
+
+  mongoRepository.saveProd(req.body).then((insertedProd) => {
+    console.log('Inserted Product')
+    console.log(insertedProd)
+    res.redirect('/prod/list')
+  })
 });
