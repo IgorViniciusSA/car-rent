@@ -16,71 +16,46 @@
             <button class = "buttonLogin"><a href="/signin" class="linksHome">Login</a></button>
         </div>
     </div>
+    <% foreach(car in dbcar){ %> 
     <div class="orderElements">
         <div class="limitCard">
-            <img class="limitImgCar" src="https://revistacarro.com.br/wp-content/uploads/2021/04/Fiat-Toro-Ultra_1.jpg">
+            <img class="limitImgCar" src="<%=car.enderecoimg%>">
         </div>
         <div class="limitCard">
             <div class="additionalInfoCarName">
-                <h1 class="carNameBar">Fiat Toro</h1>
+                <h1 class="carNameBar"><%=car.info.nome%> </h1>
                 <div class="additionalInfoCar">
                     <table>
                         <tr>
                             <td>Marca: </td>
-                            <td>Fiat</td>
+                            <td><%=car.info.marca%> </td>
                         </tr>
                         <tr>
                             <td>Cor: </td>
-                            <td>Vermelho</td>
+                            <td><%=car.info.color%></td>
                         </tr>
                         <tr>
                             <td>Preço: </td>
-                            <td>160.000,00</td>
+                            <td><%=car.info.preco%></td>
                         </tr>
                         <tr>
                             <td>Diária: </td>
-                            <td>500,00</td>
+                            <td><%=car.info.diaria%></td>
                         </tr>
                     </table>
                 </div>
+                <% if(car.status == 1){ %> 
                 <div>
                     <button class="availableTodayMsg">Disponível hoje</button>
                 </div>
+                <% }else{ %>
+                <div>
+                    <button class="availableTodayMsg">Indisponível hoje</button>
+                </div>
+                <label class="additionalButtonMsg"><%=car.datadisponivel%></label>
+                <% } %>
             </div>
         </div>
     </div>
-    <div class="orderElements">
-        <div class="limitCard">
-            <img class="limitImgCar" src="https://revistacarro.com.br/wp-content/uploads/2021/04/Fiat-Toro-Ultra_1.jpg">
-        </div>
-        <div class="limitCard">
-            <div class="additionalInfoCarName">
-                <h1 class="carNameBar">Fiat Toro</h1>
-                <div class="additionalInfoCar">
-                    <table>
-                        <tr>
-                            <td>Marca: </td>
-                            <td>Fiat</td>
-                        </tr>
-                        <tr>
-                            <td>Cor: </td>
-                            <td>Vermelho</td>
-                        </tr>
-                        <tr>
-                            <td>Preço: </td>
-                            <td>160.000,00</td>
-                        </tr>
-                        <tr>
-                            <td>Diária: </td>
-                            <td>500,00</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="orderButtonInLine">
-                    <button class="unavailableTodayMsg">Indisponível hoje</button>
-                </div>
-                <label class="additionalButtonMsg">Dísponível em 20/10/2022</label>
-            </div>
-        </div>
-    </div>
+    <% } %>    
 </body> 
