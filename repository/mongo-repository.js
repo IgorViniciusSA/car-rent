@@ -34,12 +34,12 @@ async function getUsers() {
     return findResult;
 }
 
-/*async function saveProd(product){
-  const result = await product_collection.insertOne(product)
-  console.log('Repository - saveProd - Inserted prod')
+async function saveUser(user){
+  const result = await user_collection.insertOne(user)
+  console.log('Repository - saveUser - Inserted user')
   console.log(result)
   return result;
-}*/
+  }
 
 // Cars
 async function getCars() {
@@ -69,6 +69,6 @@ async function getCars() {
 // Exportacoes
 exports.getUsers = getUsers;
 exports.getCars = getCars;
-//exports.saveProd = saveProd;
+exports.saveUser = saveUser;
 //exports.getProdsByUser = getProdsByUser;
 //exports.getProds = getProds;

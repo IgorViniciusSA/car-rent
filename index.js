@@ -85,23 +85,28 @@ app.get('/loja/aluguel', (req, res) => {
 // metodos POST
 
 app.post('/user/signUp', (req, res) => {
+  console.log('entrou aqui')
+  console.log(req.body)
   let newClient = req.body
-  
-  newClient.nome = req.body.nome
-  newClient.dataNasc = req.body.dataNasc
-  newClient.genero = req.body.genero
-  newClient.telefone = req.body.telefone
-  newClient.email = req.body.email
-
-  if(req.body.senha == confirmSenha){
-    newClient.senha = req.body.senha
-  }
-
   console.log(newClient)
-
-  mongoRepository.saveProd(req.body).then((insertedProd) => {
-    console.log('Inserted Product')
-    console.log(insertedProd)
-    res.redirect('/prod/list')
+  if(req.body.senha == req.body.confirmSenha){
+  newClient.senha = req.body.senha
+  }
+  let newAux = {
+  nome: newClient.nome,
+  dataNasc: newClient.dataNasc,
+  genero:newClient.genero,
+  telefone:newClient.telefone,
+  email: newClient.email,
+  senha: newClient.senha
+  }
+  
+  console.log(newAux)
+  console.log(newClient)
+  
+  mongoRepository.saveUser(newAux).then((insertedUser) => {
+  console.log('Inserted Product')
+  console.log(insertedUser)
+  //res.redirect('/prod/list')
   })
-});
+  });
