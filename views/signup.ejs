@@ -35,24 +35,42 @@
         <p class="textIconsSignUp">EMAIL</p>
         <input class="inputSignUpModal" type="email" name="email" value="">
         
+        
         <div class="divSenhaSignUpModal">
-
+            
             <div class="divSenhaMarginSignUpModal">
                 <p class="textIconsSignUpSenha">SENHA</p>
-                <input class="inputSignUpModalSenha" type="text" name="senha" value="">
+                <input id="campoSenha" class="inputSignUpModalSenha" type="text" name="senha" value="">
             </div>
 
             <div class="divSenhaMarginSignUpModal">
                 <p class="textIconsSignUpSenha">CONFIRMAÇÃO</p>
-                <input class="inputSignUpModalSenha" type="text" name="confirmSenha" value="">
+                <input id="campoConfirmSenha" class="inputSignUpModalSenha" type="text" name="confirmSenha" value="">
             </div>
-        </div>      
+            
+        </div>    
         </strong>
 
         <div id="buttonsConfirmSignUpModal">
             <button class="buttonCancel"><a href="/" id="linkCancel">CANCELAR</a></button>
             <button class="buttonConfirm" type="submit"><a id="linkConfirm">CADASTRAR</a></button>
         </div>
+        
     </div>
     </form>
+    <script>
+        var password = document.getElementById("campoSenha")
+        var confirm_password = document.getElementById("campoConfirmSenha");
+            
+        function validatePassword(){
+            if(password.value != confirm_password.value) {
+                confirm_password.setCustomValidity("Senhas diferentes!");
+            } else {
+                confirm_password.setCustomValidity('');
+            }
+        }
+
+        password.onchange = validatePassword;
+        confirm_password.onkeyup = validatePassword;
+    </script>
 </body> 
