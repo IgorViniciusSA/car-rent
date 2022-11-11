@@ -35,8 +35,13 @@ app.listen(port, () => {
 
 // metodos GET
 app.get('/', (req, res) => {
-  //let usuarios = mongoRepository.getUsers()
-  let usuarios = {
+
+  mongoRepository.getCars(req.user).then((carsFinded) => {
+    
+    res.render('home', {dbcar: carsFinded})
+  })
+
+  /*let usuarios = [{
     enderecoimg: 'https://revistacarro.com.br/wp-content/uploads/2021/04/Fiat-Toro-Ultra_1.jpg',
 	  nome: 'Toro',
 	  marca: 'Fiat',
@@ -48,11 +53,7 @@ app.get('/', (req, res) => {
 	  datainicioaluguel: '',
 	  datafinalaluguel: '',
 	  proximasdatas:['','','']
-  }
-  console.log(usuarios)
-  //res.render('signin', {dbcar : usuarios});
-
-  res.render('home', {dbcar: usuarios})
+  }]*/
 })
 
 app.get('/signup', (req, res) => {

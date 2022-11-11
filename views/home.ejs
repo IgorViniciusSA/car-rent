@@ -16,46 +16,49 @@
             <button class = "buttonLogin"><a href="/signin" class="linksHome">Login</a></button>
         </div>
     </div>
-    <% foreach(car in dbcar){ %> 
-    <div class="orderElements">
-        <div class="limitCard">
-            <img class="limitImgCar" src="<%=car.enderecoimg%>">
-        </div>
-        <div class="limitCard">
-            <div class="additionalInfoCarName">
-                <h1 class="carNameBar"><%=car.nome%> </h1>
-                <div class="additionalInfoCar">
-                    <table>
-                        <tr>
-                            <td>Marca: </td>
-                            <td><%=car.marca%> </td>
-                        </tr>
-                        <tr>
-                            <td>Cor: </td>
-                            <td><%=car.cor%></td>
-                        </tr>
-                        <tr>
-                            <td>Preço: </td>
-                            <td><%=car.preco%></td>
-                        </tr>
-                        <tr>
-                            <td>Diária: </td>
-                            <td><%=car.diaria%></td>
-                        </tr>
-                    </table>
+    <% console.log(dbcar)%>
+
+    <% for (let i = 0; i < dbcar.length; i++){ %> 
+    
+        <div class="orderElements">
+            <div class="limitCard">
+                <img class="limitImgCar" src="<%=dbcar[i].enderecoimg%>">
+            </div>
+            <div class="limitCard">
+                <div class="additionalInfoCarName">
+                    <h1 class="carNameBar"><%=dbcar[i].nome%> </h1>
+                    <div class="additionalInfoCar">
+                        <table>
+                            <tr>
+                                <td>Marca: </td>
+                                <td><%=dbcar[i].marca%> </td>
+                            </tr>
+                            <tr>
+                                <td>Cor: </td>
+                                <td><%=dbcar[i].cor%></td>
+                            </tr>
+                            <tr>
+                                <td>Preço: </td>
+                                <td><%=dbcar[i].preco%></td>
+                            </tr>
+                            <tr>
+                                <td>Diária: </td>
+                                <td><%=dbcar[i].diaria%></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <% if(dbcar[i].status == 1){ %> 
+                    <div>
+                        <button class="availableTodayMsg">Disponível hoje</button>
+                    </div>
+                    <% }else{ %>
+                    <div>
+                        <button class="availableTodayMsg">Indisponível hoje</button>
+                    </div>
+                    <label class="additionalButtonMsg"><%=dbcar[i].datadisponivel%></label>
+                    <% } %>
                 </div>
-                <% if(car.status == 1){ %> 
-                <div>
-                    <button class="availableTodayMsg">Disponível hoje</button>
-                </div>
-                <% }else{ %>
-                <div>
-                    <button class="availableTodayMsg">Indisponível hoje</button>
-                </div>
-                <label class="additionalButtonMsg"><%=car.datadisponivel%></label>
-                <% } %>
             </div>
         </div>
-    </div>
-    <% } %>    
+    <% } %>  
 </body> 
