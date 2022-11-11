@@ -34,6 +34,13 @@ async function getUsers() {
     return findResult;
 }
 
+async function getUser(email, senha) {
+  const findResult = await user_collection.find({email: email, senha: senha}).toArray();
+
+  console.log(findResult)
+  return findResult;
+}
+
 async function saveUser(user){
   const result = await user_collection.insertOne(user)
   console.log('Repository - saveUser - Inserted user')
@@ -43,10 +50,7 @@ async function saveUser(user){
 
 // Cars
 async function getCars() {
-    console.log('dentro do getCars')
     const findResult = await car_collection.find().toArray();
-
-    console.log('carros: ', findResult);
     return findResult;
 }
 
@@ -65,19 +69,12 @@ async function saveCar(car){
   return findResult;
 }*/
 
-/*async function getProds() {
-  console.log('getProds -')
-  
-  const findResult = await product_collection.find().toArray();
-  console.log('Repository - getProds - Found documents =>', findResult);
-  return findResult;
-}*/
-
-
 // Exportacoes
 exports.getUsers = getUsers;
-exports.getCars = getCars;
+exports.getUser = getUser;
 exports.saveUser = saveUser;
+
+exports.getCars = getCars;
 exports.saveCar = saveCar;
 
 //exports.getProdsByUser = getProdsByUser;

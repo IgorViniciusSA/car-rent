@@ -16,7 +16,6 @@
             <button class = "buttonLogin"><a href="/signin" class="linksHome">Login</a></button>
         </div>
     </div>
-    <% console.log(dbcar)%>
 
     <% for (let i = 0; i < dbcar.length; i++){ %> 
     
@@ -53,7 +52,7 @@
                     </div>
                     <% }else{ %>
                     <div>
-                        <button class="availableTodayMsg">Indisponível hoje</button>
+                        <button class="unavailableTodayMsg">Indisponível hoje</button>
                     </div>
                     <label class="additionalButtonMsg"><%=dbcar[i].datadisponivel%></label>
                     <% } %>
