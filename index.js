@@ -71,7 +71,7 @@ app.post('/signin', async(req, res) => {
 
   const user = await mongoRepository.getUser(email, senha)
   
-  if (user) {
+  if (user.length != 0) {
       user.password = null;
       req.session.user = user;
 
