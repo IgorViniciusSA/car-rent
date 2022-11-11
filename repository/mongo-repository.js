@@ -45,9 +45,17 @@ async function saveUser(user){
 async function getCars() {
     console.log('dentro do getCars')
     const findResult = await car_collection.find().toArray();
+
     console.log('carros: ', findResult);
     return findResult;
 }
+
+async function saveCar(car){
+  const result = await car_collection.insertOne(car)
+  console.log('Repository - saveCar - Inserted car')
+  console.log(result)
+  return result;
+  }
 /*async function getProdsByUser(user) {
   console.log('getProdsByUser - Username param:', user.username)
   
@@ -70,5 +78,7 @@ async function getCars() {
 exports.getUsers = getUsers;
 exports.getCars = getCars;
 exports.saveUser = saveUser;
+exports.saveCar = saveCar;
+
 //exports.getProdsByUser = getProdsByUser;
 //exports.getProds = getProds;
