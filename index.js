@@ -85,12 +85,13 @@ app.post('/admin/signin', async(req, res) => {
   const { email, senha } = req.body
 
   const user = await mongoRepository.getUser(email, senha)
-  console.log(user);
-  if (user.isadmin == '1') {
+  if(user.length != 0){
+  if (user.isadmin != '1') {
       user.password = null;
       req.session.user = user;
 
       return res.render('/admin/loja')
+  }
   }
   else {
     return res.render('admin');
